@@ -11,6 +11,9 @@ https://github.com/nicklockwood/iCarousel
 主要是CATransform3D. 最终要实现理想动画需要自定义一个CATransform3D.
 
 
+
+
+
 ### 修改部分，添加了两个属性 新增一个方法
 
 ####属性 firstCardType
@@ -23,8 +26,6 @@ https://github.com/nicklockwood/iCarousel
 为了不破坏原始代码的逻辑 新定义了一个方法。
 
 
-
-####详情代码里都有注释
 
 ###声明：此demo只是对iCarousel进行微调，不喜勿喷。有什么问题可以issue我。
 
