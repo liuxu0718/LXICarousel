@@ -19,7 +19,7 @@ https://github.com/nicklockwood/iCarousel
 #####属性 firstCardType
 可以自定义第一个card的动画类型（由于目前写不出来完美的CATransform3D, 这里的类型依旧依赖原始的动画）。
 
-####￥属性 isGradually 
+#####属性 isGradually 
 控制第一个card是否透明。
 
 #####方法 - (CATransform3D)newTransformForItemViewWithOffset:(CGFloat)offset 
