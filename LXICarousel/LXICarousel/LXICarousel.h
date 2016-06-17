@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol iCarouselDataSource, iCarouselDelegate;
 
-@interface iCarousel : UIView
+@interface LXICarousel : UIView
 
 @property (nonatomic, weak_delegate) IBOutlet __nullable id<iCarouselDataSource> dataSource;
 @property (nonatomic, weak_delegate) IBOutlet __nullable id<iCarouselDelegate> delegate;
@@ -169,13 +169,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol iCarouselDataSource <NSObject>
 
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel;
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
+- (NSInteger)numberOfItemsInCarousel:(LXICarousel *)carousel;
+- (UIView *)carousel:(LXICarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
 
 @optional
 
-- (NSInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel;
-- (UIView *)carousel:(iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
+- (NSInteger)numberOfPlaceholdersInCarousel:(LXICarousel *)carousel;
+- (UIView *)carousel:(LXICarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
 
 @end
 
@@ -183,21 +183,21 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol iCarouselDelegate <NSObject>
 @optional
 
-- (void)carouselWillBeginScrollingAnimation:(iCarousel *)carousel;
-- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel;
-- (void)carouselDidScroll:(iCarousel *)carousel;
-- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel;
-- (void)carouselWillBeginDragging:(iCarousel *)carousel;
-- (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate;
-- (void)carouselWillBeginDecelerating:(iCarousel *)carousel;
-- (void)carouselDidEndDecelerating:(iCarousel *)carousel;
+- (void)carouselWillBeginScrollingAnimation:(LXICarousel *)carousel;
+- (void)carouselDidEndScrollingAnimation:(LXICarousel *)carousel;
+- (void)carouselDidScroll:(LXICarousel *)carousel;
+- (void)carouselCurrentItemIndexDidChange:(LXICarousel *)carousel;
+- (void)carouselWillBeginDragging:(LXICarousel *)carousel;
+- (void)carouselDidEndDragging:(LXICarousel *)carousel willDecelerate:(BOOL)decelerate;
+- (void)carouselWillBeginDecelerating:(LXICarousel *)carousel;
+- (void)carouselDidEndDecelerating:(LXICarousel *)carousel;
 
-- (BOOL)carousel:(iCarousel *)carousel shouldSelectItemAtIndex:(NSInteger)index;
-- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index;
+- (BOOL)carousel:(LXICarousel *)carousel shouldSelectItemAtIndex:(NSInteger)index;
+- (void)carousel:(LXICarousel *)carousel didSelectItemAtIndex:(NSInteger)index;
 
-- (CGFloat)carouselItemWidth:(iCarousel *)carousel;
-- (CATransform3D)carousel:(iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform;
-- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value;
+- (CGFloat)carouselItemWidth:(LXICarousel *)carousel;
+- (CATransform3D)carousel:(LXICarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform;
+- (CGFloat)carousel:(LXICarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value;
 
 @end
 

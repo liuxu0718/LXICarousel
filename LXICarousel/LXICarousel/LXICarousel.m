@@ -30,7 +30,7 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#import "iCarousel.h"
+#import "LXICarousel.h"
 #import <objc/message.h>
 
 
@@ -70,32 +70,32 @@
 
 @implementation NSObject (iCarousel)
 
-- (NSUInteger)numberOfPlaceholdersInCarousel:(__unused iCarousel *)carousel { return 0; }
-- (void)carouselWillBeginScrollingAnimation:(__unused iCarousel *)carousel {}
-- (void)carouselDidEndScrollingAnimation:(__unused iCarousel *)carousel {}
-- (void)carouselDidScroll:(__unused iCarousel *)carousel {}
+- (NSUInteger)numberOfPlaceholdersInCarousel:(__unused LXICarousel *)carousel { return 0; }
+- (void)carouselWillBeginScrollingAnimation:(__unused LXICarousel *)carousel {}
+- (void)carouselDidEndScrollingAnimation:(__unused LXICarousel *)carousel {}
+- (void)carouselDidScroll:(__unused LXICarousel *)carousel {}
 
-- (void)carouselCurrentItemIndexDidChange:(__unused iCarousel *)carousel {}
-- (void)carouselWillBeginDragging:(__unused iCarousel *)carousel {}
-- (void)carouselDidEndDragging:(__unused iCarousel *)carousel willDecelerate:(__unused BOOL)decelerate {}
-- (void)carouselWillBeginDecelerating:(__unused iCarousel *)carousel {}
-- (void)carouselDidEndDecelerating:(__unused iCarousel *)carousel {}
+- (void)carouselCurrentItemIndexDidChange:(__unused LXICarousel *)carousel {}
+- (void)carouselWillBeginDragging:(__unused LXICarousel *)carousel {}
+- (void)carouselDidEndDragging:(__unused LXICarousel *)carousel willDecelerate:(__unused BOOL)decelerate {}
+- (void)carouselWillBeginDecelerating:(__unused LXICarousel *)carousel {}
+- (void)carouselDidEndDecelerating:(__unused LXICarousel *)carousel {}
 
-- (BOOL)carousel:(__unused iCarousel *)carousel shouldSelectItemAtIndex:(__unused NSInteger)index { return YES; }
-- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(__unused NSInteger)index {}
+- (BOOL)carousel:(__unused LXICarousel *)carousel shouldSelectItemAtIndex:(__unused NSInteger)index { return YES; }
+- (void)carousel:(__unused LXICarousel *)carousel didSelectItemAtIndex:(__unused NSInteger)index {}
 
-- (CGFloat)carouselItemWidth:(__unused iCarousel *)carousel { return 0; }
-- (CATransform3D)carousel:(__unused iCarousel *)carousel
+- (CGFloat)carouselItemWidth:(__unused LXICarousel *)carousel { return 0; }
+- (CATransform3D)carousel:(__unused LXICarousel *)carousel
    itemTransformForOffset:(__unused CGFloat)offset
             baseTransform:(CATransform3D)transform { return transform; }
-- (CGFloat)carousel:(__unused iCarousel *)carousel
+- (CGFloat)carousel:(__unused LXICarousel *)carousel
      valueForOption:(__unused iCarouselOption)option
         withDefault:(CGFloat)value { return value; }
 
 @end
 
 
-@interface iCarousel ()
+@interface LXICarousel ()
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) NSMutableDictionary *itemViews;
@@ -122,12 +122,12 @@
 @property (nonatomic, assign) BOOL didDrag;
 @property (nonatomic, assign) NSTimeInterval toggleTime;
 
-NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *self);
+NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, LXICarousel *self);
 
 @end
 
 
-@implementation iCarousel
+@implementation LXICarousel
 
 #pragma mark -
 #pragma mark Initialisation
@@ -914,7 +914,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
 }
 
-NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *self)
+NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, LXICarousel *self)
 {
     //compare depths
     CATransform3D t1 = view1.superview.layer.transform;

@@ -13,9 +13,9 @@
 		A731D2BA1D12908800284652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A731D2B81D12908800284652 /* Main.storyboard */; };
 		A731D2BC1D12908800284652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A731D2BB1D12908800284652 /* Assets.xcassets */; };
 		A731D2BF1D12908800284652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A731D2BD1D12908800284652 /* LaunchScreen.storyboard */; };
-		A731D2C91D1290C000284652 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A731D2C81D1290C000284652 /* iCarousel.m */; };
 		A731D2CC1D12925400284652 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A731D2CA1D12925400284652 /* background.png */; };
 		A731D2CD1D12925400284652 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = A731D2CB1D12925400284652 /* page.png */; };
+		A7FE19561D139129008C0806 /* LXICarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FE19551D139129008C0806 /* LXICarousel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +29,10 @@
 		A731D2BB1D12908800284652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A731D2BE1D12908800284652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A731D2C01D12908800284652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A731D2C71D1290C000284652 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		A731D2C81D1290C000284652 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		A731D2CA1D12925400284652 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		A731D2CB1D12925400284652 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		A7FE19541D139129008C0806 /* LXICarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXICarousel.h; sourceTree = "<group>"; };
+		A7FE19551D139129008C0806 /* LXICarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXICarousel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 		A731D2AE1D12908800284652 /* LXICarousel */ = {
 			isa = PBXGroup;
 			children = (
-				A731D2C61D1290C000284652 /* iCarousel */,
+				A7FE19531D139129008C0806 /* LXICarousel */,
 				A731D2B21D12908800284652 /* AppDelegate.h */,
 				A731D2B31D12908800284652 /* AppDelegate.m */,
 				A731D2B51D12908800284652 /* ViewController.h */,
@@ -89,13 +89,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A731D2C61D1290C000284652 /* iCarousel */ = {
+		A7FE19531D139129008C0806 /* LXICarousel */ = {
 			isa = PBXGroup;
 			children = (
-				A731D2C71D1290C000284652 /* iCarousel.h */,
-				A731D2C81D1290C000284652 /* iCarousel.m */,
+				A7FE19541D139129008C0806 /* LXICarousel.h */,
+				A7FE19551D139129008C0806 /* LXICarousel.m */,
 			);
-			path = iCarousel;
+			path = LXICarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A731D2B71D12908800284652 /* ViewController.m in Sources */,
-				A731D2C91D1290C000284652 /* iCarousel.m in Sources */,
 				A731D2B41D12908800284652 /* AppDelegate.m in Sources */,
 				A731D2B11D12908800284652 /* main.m in Sources */,
+				A7FE19561D139129008C0806 /* LXICarousel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +324,7 @@
 				A731D2C51D12908800284652 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

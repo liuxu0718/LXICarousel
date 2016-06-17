@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "iCarousel.h"
+#import "LXICarousel.h"
 
 @interface ViewController ()<iCarouselDataSource, iCarouselDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) iCarousel *carousel;
+@property (nonatomic, strong) LXICarousel *carousel;
 @property (nonatomic, assign) iCarouselType firstCardType;
 @property (nonatomic, assign) BOOL wrap;//是否重复
 
@@ -28,7 +28,7 @@
     for (int i = 0; i < 10; i++) {
         [_dataArray addObject:@(i)];
     }
-    _carousel = [[iCarousel alloc]initWithFrame:self.view.frame];
+    _carousel = [[LXICarousel alloc]initWithFrame:self.view.frame];
     _carousel.delegate = self;
     _carousel.dataSource = self;
     _carousel.firstCardType = iCarouselTypeLinear;
@@ -89,12 +89,12 @@
 #pragma mark -
 #pragma mark iCarousel methods
 
-- (NSInteger)numberOfItemsInCarousel:(__unused iCarousel *)carousel {
+- (NSInteger)numberOfItemsInCarousel:(__unused LXICarousel *)carousel {
     return _dataArray.count;
 }
 
 #pragma mark - card视图
-- (UIView *)carousel:(__unused iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+- (UIView *)carousel:(__unused LXICarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     UILabel *label = nil;
     
     //create new view if no view is available for recycling
@@ -122,12 +122,12 @@
     return view;
 }
 
-- (NSInteger)numberOfPlaceholdersInCarousel:(__unused iCarousel *)carousel {
+- (NSInteger)numberOfPlaceholdersInCarousel:(__unused LXICarousel *)carousel {
     //note: placeholder views are only displayed on some carousels if wrapping is disabled
     return 2;
 }
 
-- (UIView *)carousel:(__unused iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(UIView *)view {
+- (UIView *)carousel:(__unused LXICarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(UIView *)view {
     UILabel *label = nil;
     
     //create new view if no view is available for recycling
@@ -161,13 +161,13 @@
 }
 
 #pragma mark 自定义动画预留的方法
-- (CATransform3D)carousel:(__unused iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform {
+- (CATransform3D)carousel:(__unused LXICarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform {
     //implement 'flip3D' style carousel
     transform = CATransform3DRotate(transform, M_PI / 8.0f, 0.0f, 1.0f, 0.0f);
     return CATransform3DTranslate(transform, 0.0f, 0.0f, offset * self.carousel.itemWidth);
 }
 
-- (CGFloat)carousel:(__unused iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+- (CGFloat)carousel:(__unused LXICarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
     //customize carousel display
     switch (option) {
         case iCarouselOptionWrap: {
@@ -204,12 +204,12 @@
 #pragma mark -
 #pragma mark iCarousel taps
 
-- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
+- (void)carousel:(__unused LXICarousel *)carousel didSelectItemAtIndex:(NSInteger)index {
     NSNumber *item = (self.dataArray)[(NSUInteger)index];
     NSLog(@"Tapped view number: %@", item);
 }
 
-- (void)carouselCurrentItemIndexDidChange:(__unused iCarousel *)carousel {
+- (void)carouselCurrentItemIndexDidChange:(__unused LXICarousel *)carousel {
     NSLog(@"Index: %@", @(self.carousel.currentItemIndex));
 }
 
